@@ -13,23 +13,37 @@
 ActiveRecord::Schema.define(version: 2021_07_07_075805) do
 
   create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "post_comment", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.text "body", null: false
+    t.string "before_image_id", null: false
+    t.string "after_image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followed_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,6 +52,10 @@ ActiveRecord::Schema.define(version: 2021_07_07_075805) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name", default: "", null: false
+    t.text "body"
+    t.string "profile_image_id"
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
