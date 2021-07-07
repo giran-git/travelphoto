@@ -1,0 +1,2 @@
+class PostComman < ApplicationRecord
+end
