@@ -12,7 +12,7 @@
           <li><%= link_to ' マイページ',user_path(current_user),class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' 思い出の記録',posts_path,class: 'fas fa-users nav-link text-light' %></li>
           <!--<li><#%= link_to ' 撮影地一覧'  ,locations_path,class: 'fas fa-users nav-link text-light' %></li>-->
-          <li><%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
+          <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
           <!-- 管理者側がログインしたら -->
           <!--<#% elsif admin_signed_in? %>-->
           <!--  <li><#%=link_to'ユーザー一覧', admin_items_path,class: 'nav-link' %></li>-->
