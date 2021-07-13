@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+
+footer{
+    width: 100%;
+    color: #212529;
+    text-align: center;
+
+    // position: absolute;/*←絶対位置*/
+    // // bottom: 0; /*下に固定*/
+}
+
+.footer-text{
+  color: white;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: 'ヒラギノ明朝 Pro W6';
+}
+
+
+.table{
+  color: #fff;
+}
+//スライドショー
+#box{
+  position: relative;
+  max-width: 100%;
+  height: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+// .image1 {
+//   background-image: image_url(image1.jpeg);
+  // background-size: cover;
+}
+// .image2 {
+//   background-image: image_url(image2.jpeg);
+//   background-size: cover;
+// }
+// .image3 {
+//   background-image: image_url(image3.jpeg);
+//   background-size: cover;
+// }
+// .image4 {
+//   background-image: image_url(image4.jpeg);
+//   background-size: cover;
+// }
+// // スライドショー
+// body{
+//   color: #fff;
+// }
+
+// .main-visual{
+//   position: absolute;
+//   display: inline-block;
+//   padding: 20px;
+//   color: #fff;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   z-index: 11;
+// }
+
+// .about {
+//     padding-top: 70px;
+//     font-size: 20px;
+//     text-align: center;
+//     font-family: 'ヒラギノ明朝 Pro W6';
+// }
+
+// .egawa{
+//   margin: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-image: image_url(image6.jpeg);
+//   background-size: cover;
+// }
+
+// .egawa2{
+//   margin: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-image: urimage_url(images2.jpeg);
+//   background-size: cover;
+// }
+
