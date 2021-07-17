@@ -1,0 +1,41 @@
+<div class="egawa2">
+  <div class='container'>
+    <br>
+      <h2 class="row m-3">〜ログイン〜</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :パスワード %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :ユーザー名、パスワードを記録 %>
+          </div>
+        <% end %>
+
+          <div class="actions">
+            <%= f.submit "ログイン" %>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="header-background col-md-5">会員登録が登録がお済みではない方</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7 col-md-offset-2">
+            <%= render "customers/shared/links" %>
+              お願いします。
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

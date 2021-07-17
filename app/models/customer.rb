@@ -1,12 +1,12 @@
-class User < ApplicationRecord
+class Customer < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
          has_many :posts, dependent: :destroy
          has_many :favorites, dependent: :destroy
-         
+
          #ここからフォロー機能関連
   # 自分がフォローされる（被フォロー）側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy

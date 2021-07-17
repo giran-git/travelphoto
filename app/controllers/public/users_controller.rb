@@ -8,6 +8,14 @@ class Public::UsersController < ApplicationController
     @post = Post.new
   end
 
+  def index
+    @posts = Post.all
+    @post = Post.new
+  end
+
+  def edit
+  end
+
   def new
     @user = User.new
   end
@@ -22,8 +30,11 @@ class Public::UsersController < ApplicationController
       render("users/new")
     end
   end
+
 private
+
   def user_params
-  params.require(:user).permit(:name, :email, :password,:password_confirmation)
+    params.require(:user).permit(:name, :email, :password,:password_confirmation)
   end
+
 end

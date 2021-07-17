@@ -68,9 +68,9 @@ footer{
   background-size: cover;
 }
 // スライドショー
-body{
-  color: #fff;
-}
+// body{
+//   color: #fff;
+// }
 
 .main-visual{
   position: absolute;
@@ -96,7 +96,9 @@ body{
   height: 100vh;
   background-image: url(image6.jpeg);
   background-size: cover;
+  color: #fff;
 }
+
 
 .egawa2{
   margin: 0;
@@ -104,5 +106,6 @@ body{
   height: 100vh;
   background-image: url(images2.jpeg);
   background-size: cover;
+  color: #fff;
 }
 

@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations',
   }
 
+  devise_for :customers, controllers: {
+    sessions: 'customers/sessions',
+    passwords: 'customers/passwords',
+    registrations: 'customers/registrations',
+  }
 
   scope module: :public do
     root :to => "homes#top"
@@ -24,10 +29,8 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
-
   end
+end
 
-  devise_for :users
-  end
 
 end
