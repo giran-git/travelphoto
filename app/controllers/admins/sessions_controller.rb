@@ -6,6 +6,7 @@ class Admins::SessionsController < Devise::SessionsController
   # GET /resource/sign_in
   # def new
   #   super
+  #   # byebug
   # end
 
   # POST /resource/sign_in

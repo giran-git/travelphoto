@@ -9,15 +9,15 @@
         <ul class="navbar-nav ml-auto">
           <!--ユーザーがログインしたら-->
         <% if customer_signed_in? %>
-          <li><%= link_to ' マイページ',users_path(current_user),class: 'fas fa-home nav-link text-light' %></li>
+          <li><%= link_to ' マイページ',users_path(current_customer),class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' 思い出の記録',posts_path,class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' 撮影地一覧' ,locations_index_path,class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' ログアウト', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
           <!-- 管理者側がログインしたら -->
           <% elsif admin_signed_in? %>
-            <li><%=link_to'ユーザー一覧', admin_items_path,class: 'nav-link' %></li>
-            <li><%=link_to'思い出の記録', admin_customers_path, class:'nav-link' %></li>
-            <li><%=link_to'ジャンル一覧', admin_genres_path,class: 'nav-link' %></li>
+            <li><%=link_to'ユーザー一覧', admin_session_path,class: 'nav-link' %></li>
+            <li><%=link_to'思い出の記録', posts_path, class:'nav-link' %></li>
+            <li><%=link_to'ジャンル一覧',  admin_genres_edit_path,class: 'nav-link' %></li>
             <li><%=link_to'ログアウト',  destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
         <% else %>
           <li><%= link_to ' Top',root_path,class: 'fas fa-home nav-link text-light' %></li>

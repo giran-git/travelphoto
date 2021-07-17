@@ -2,7 +2,7 @@
 <div class='container'>
     <br>
       <h2 class="row m-3">〜管理者ログイン〜</h2>
-        <%= form_with model: @user, url: new_admin_session_path, local: true do |f| %>
+        <%= form_with model: @admin, url: new_admin_session_path, local: true do |f| %>
           <div class="field">
             <%= f.label :メールアドレス %><br />
             <%= f.text_field :email, autofocus: true, class: "email" %>
