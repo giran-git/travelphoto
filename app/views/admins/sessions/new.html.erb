@@ -1,5 +1,5 @@
-
-<div class='container'>
+<div class="admin">
+ <div class='container'>
     <br>
       <h2 class="row m-3">〜管理者ログイン〜</h2>
         <%= form_with model: @admin, url: new_admin_session_path, local: true do |f| %>
@@ -11,9 +11,9 @@
             <%= f.label :パスワード %><br />
             <%= f.password_field :password, autocomplete: "off", class: "password" %>
           </div>
-        <div class="actions">
-          <%= f.submit "ログイン" ,class: 'btn btn-sm btn-primary'%>
-        </div>
-      <% end %>
-    </div>
+          <div class="actions">
+            <%= f.submit "ログイン" ,class: 'btn btn-sm btn-primary'%>
+          </div>
+        <% end %>
   </div>
+</div>

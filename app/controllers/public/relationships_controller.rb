@@ -2,7 +2,7 @@ class Public::RelationshipsController < ApplicationController
    before_action :authenticate_user!
 
   def create
-    user = User.find(params[:followed_id])
+    user = Customer.find(params[:followed_id])
     current_user.follow(user)
     @url = request.referer
     redirect_to @url

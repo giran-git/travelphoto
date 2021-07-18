@@ -1,5 +1,5 @@
 class Public::FavoritesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_customer!
 
   def create
     @post = Post.find(params[:book_id])

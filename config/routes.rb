@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     root :to => 'homess#top'
-   get 'genres/edit'
-   get 'genres/index'
+    resources :genres, only: [:index, :create, :edit, :update]
   end
 
   devise_for :admins, controllers: {
@@ -20,8 +19,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => "homes#top"
     get 'home/about' =>  'homes#about'
-    get 'items/index'
-    resources :posts do
+    resources :posts, only: [:index, :new] do
       resource :favorites, only: [:create, :destroy]
     end
     get 'locations/index'

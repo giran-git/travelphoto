@@ -1,1 +1,17 @@
-<h1>一覧</h1>
+<div class="egawa">
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-2'>
+        <%= link_to new_post_url do %>
+          <span class="fas fa-plus size" ></span>
+        <% end %>
+      </div>
+      <div class='col-md-2'>
+        <h1><%= link_to '',new_post_url,class: 'fas fa-home nav-link text-light' %></h1>
+      </div>
+      <div class='col-md-8'>
+        <h1>投稿一覧</h1>
+      </div>
+    </div>
+  </div>
+</div>

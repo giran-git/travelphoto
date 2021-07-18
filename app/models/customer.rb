@@ -17,6 +17,7 @@ class Customer < ApplicationRecord
   # 与フォロー関係を通じて参照→自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
 
+  attachment :profile_image
   # ユーザーをフォローする
   def follow(user_id)
     relationships.create(followed_id: user_id)
