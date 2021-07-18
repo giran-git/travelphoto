@@ -1,2 +1,17 @@
-<h1>Genres#edit</h1>
-<p>Find me in app/views/genres/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+  	<div class="col-xs-12">
+  	  <!--エラーメッセージ表示-->
+      <!--<#%= render 'public/error.msg', object:  @genre %>-->
+
+  		<h2 class="head-line title_h2 text-center" >ジャンル編集</h2>
+        <%= form_for @genre, :url => {:action => :update} do |f| %>
+        <div>
+          ジャンル
+            <%= f.text_field :name  %>
+            <%= f.submit "変更を保存する", class: "btn btn-info" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
