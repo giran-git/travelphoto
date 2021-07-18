@@ -18,27 +18,29 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
-footer{
-    width: 100%;
-    color: #212529;
-    text-align: center;
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
-    // position: absolute;/*←絶対位置*/
-    // // bottom: 0; /*下に固定*/
 }
 
-.footer-text{
+footer {
+  margin-top: auto;
+  background-color: #432;
+  p{
+    color: white;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'ヒラギノ明朝 Pro W6';
+  }
+}
+
+.avbar-brand{
   color: white;
-  margin: 0 auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-family: 'ヒラギノ明朝 Pro W6';
 }
 
-
-.table{
-  color: #fff;
-}
 //スライドショー
 #box{
   position: relative;
@@ -68,10 +70,6 @@ footer{
   background-size: cover;
 }
 // スライドショー
-// body{
-//   color: #fff;
-// }
-
 .main-visual{
   position: absolute;
   display: inline-block;
@@ -109,3 +107,10 @@ footer{
   color: #fff;
 }
 
+.body{
+  color: #fff;
+}
+
+.table{
+  color: #fff;
+}
