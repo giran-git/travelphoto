@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_07_18_061454) do
   end
 
   create_table "locations", force: :cascade do |t|
+    t.integer "location_area", default: 0, null: false
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,9 +69,12 @@ ActiveRecord::Schema.define(version: 2021_07_18_061454) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "post_area", default: 0, null: false
     t.string "name"
     t.string "text"
-    t.text "image"
+    t.integer "genre_id"
+    t.string "image_id"
+    t.integer "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
