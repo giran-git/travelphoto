@@ -4,7 +4,10 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :post_area, null: false, default: 0
       t.string :name
       t.string :text
+      t.text :body
+      t.string :title, null: false
       t.integer :genre_id
+
       t.string :image_id
       t.integer :customer_id
       t.timestamps
