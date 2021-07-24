@@ -42,6 +42,8 @@ footer {
 }
 
 //スライドショー
+
+
 #box{
   position: relative;
   max-width: 100%;
@@ -113,4 +115,16 @@ footer {
 
 .table{
   color: #fff;
+}
+
+.notice {
+  background-color: green;
+  color: #white;
+  text-align: center;
+}
+
+.alert {
+  background-color: red;
+  color: #white;
+  text-align: center;
 }

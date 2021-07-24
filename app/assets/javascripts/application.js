@@ -43,3 +43,7 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
+
+$(function(){
+  setTimeout("$('.flash').fadeOut('slow')", 3000);
+});
