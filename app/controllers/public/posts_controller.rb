@@ -6,12 +6,14 @@ class Public::PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
   end
+
   def new
    @post = Post.new
   end
+
   def show
     @post = Post.find(params[:id])
-    @customer = Customer.find_by(id: @post.customer_id)
+    @customer = Customer.find(@post.customer_id)
   end
 
   def create

@@ -1,5 +1,5 @@
 class Public::UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  # before_action :set_user, only: [:show]
 
 def show
    @user = Customer.find(params[:id])
@@ -14,7 +14,7 @@ end
 
 private
 
-  def set_user
-    @user = Customer.find([:id])
-  end
+  # def set_user
+  #   @user = Customer.find(params[:id])
+  # end
 end

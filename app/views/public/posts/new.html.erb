@@ -1,9 +1,8 @@
 <div class="egawa">
   <div class='container'>
       <h3>新規登録</h3>
-        <%= form_with model: @post, url: new_post_path, local: true do |f| %>
           <% if @post.errors.any? %>
-            <div id="error_explanation">
+          <div id="error_explanation">
               <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
                 <ul>
                   <% @post.errors.full_messages.each do |message| %>
@@ -12,6 +11,7 @@
                 </ul>
             </div>
           <% end %>
+        <%= form_with model:@post do |f| %>
       　   <div class="row">
       　     <div class="col-md-6">
       　       <div class="form_group">
@@ -40,28 +40,28 @@
               <div class="row form_group">
                 <label class="control-label col-md-2">撮影場所</label>
                 <div class="col-md-5">
-                  <%= f.text_field :name, :class => "form-control edit-form" %>
+                  <%= f.text_field :title, :class => "form-control edit-form" %>
                 </div>
               </div>
               </br>
               <div class="row form_group">
                 <label class="control-label col-md-2">撮影地説明</label>
                 <div class="col-md-5">
-                  <%= f.text_field :text, :class => "form-control edit-form" %>
+                  <%= f.text_area :body, :class => "form-control edit-form" %>
                 </div>
               </div>
               </br>
               <div class="row form_group">
                 <label class="control-label col-md-2">ジャンル名</label>
-                <%= form_for @post, method: :post do |f| %>
-                  <%= f.select :presence, Post.post_areas.keys, {} %>
+                <%= form_with model: @post, method: :post do |f| %>
+                  <%= f.select :genre_id, Post.post_areas.keys, {} %>
                 <% end %>
               </div>
               </br>
               <div class="row form_group">
                 <label class="control-label col-md-2">都道府県選択</label>
                 <%= form_with model: @location, method: :post do |f| %>
-                <%= f.select :presence, Location.loca_areas.keys, {} %>
+                <%= f.select  :location_id, Location.location_areas.keys, {} %>
                 <% end %>
               </div>
               </br>
@@ -73,7 +73,7 @@
               </div>
               </br>
               <div class="form-group">
-                <%= f.submit %>
+                 <p><%= f.submit '投稿' %></p>
               </div>
             </div>
       　   </div>
