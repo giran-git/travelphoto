@@ -10,8 +10,13 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
     <main>
+      <%= render 'layouts/header' %>
+    　<% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name %>">
+          <%= msg %>
+        </div>
+      <% end %>
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>
