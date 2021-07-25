@@ -6,9 +6,10 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { maximum: 200 }
 
   has_many :favorites, dependent: :destroy
+  has_many :favorite_customers, through: :favorites, source: :customer
 
-  def favorited_by?(user)
-    favorites.where(user_id: user.id).exists?
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
   end
 
   # プルダウン用

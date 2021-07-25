@@ -5,7 +5,9 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :posts, dependent: :destroy
+         #２ついいね機能
          has_many :favorites, dependent: :destroy
+         has_many :favorite_posts, through: :favorites, source: :item
 
          #ここからフォロー機能関連
   # 自分がフォローされる（被フォロー）側の関係性
@@ -38,4 +40,6 @@ class Customer < ApplicationRecord
   validates :name, presence: true, length: {in:1..50}
 
   attachment :profile_image
+
+
 end
