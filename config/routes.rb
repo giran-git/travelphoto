@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root :to => 'homess#top'
+    root :to => 'homes#index'
     resources :genres, only: [:index, :create, :edit, :update]
   end
 
@@ -19,16 +19,16 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => "homes#top"
     get 'home/about' =>  'homes#about'
-    resources :posts, only: [:index, :new] do
+    post "posts/creat" => "posts#creat"
+    resources :posts, only: [:index, :show, :new, :edit, :create, :destroy, :update] do
       resource :favorites, only: [:create, :destroy]
+      resources :post_comments, only: [:create, :destroy]
     end
     get 'locations/index'
     resources :users, only: [:index, :new, :show, :edit, :update] do
-    member do
-      get :following, :followers
+       resource :relationships, only: [:create, :destroy]
+        get 'followings' => 'relationships#followings', as: 'followings'
+        get 'followers' => 'relationships#followers', as: 'followers'
     end
   end
-end
-
-
 end

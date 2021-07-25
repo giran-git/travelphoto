@@ -13,7 +13,7 @@
     <div class='container'>
       <div class="row">
   		  <% @posts.each do |post| %>
-  		  <div class="col-md-3">
+  		    <div class="col-md-3">
             <tr>
               <th>
                 <%= link_to(post_path(post)) do  %>
@@ -25,6 +25,9 @@
               <br>
               <th><%= link_to post.title, post_path(post)  %></th>
               <br>
+              <div id="post_<%= post.id %>">
+                <%= render 'public/favorites/favorite-btn' ,  post: post %>
+              </div>
             </tr>
           </div>
         <% end %>
