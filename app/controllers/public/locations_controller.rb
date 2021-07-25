@@ -4,5 +4,9 @@ class Public::LocationsController < ApplicationController
   def index
     @Posts = Post.all
   end
+  def new
+    @location = Location.new
+  end
+
 
 end

@@ -3,11 +3,13 @@ class Public::UsersController < ApplicationController
 
 def show
    @user = Customer.find(params[:id])
+   @posts = @user.posts
+   @post = Post.new
 end
 
 def index
   @customer = current_customer
-  @customers = Customer.all
+  @posts = @customer.posts
 end
 
 private
