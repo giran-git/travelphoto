@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_18_061454) do
+ActiveRecord::Schema.define(version: 2021_07_23_120546) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,10 +40,13 @@ ActiveRecord::Schema.define(version: 2021_07_18_061454) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "post_id", null: false
+    t.integer "customer_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["customer_id", "post_id"], name: "index_favorites_on_customer_id_and_post_id", unique: true
+    t.index ["customer_id"], name: "index_favorites_on_customer_id"
+    t.index ["post_id"], name: "index_favorites_on_post_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_07_18_061454) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_comment", force: :cascade do |t|
+  create_table "post_comments", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
     t.integer "post_id"
@@ -72,6 +75,8 @@ ActiveRecord::Schema.define(version: 2021_07_18_061454) do
     t.integer "post_area", default: 0, null: false
     t.string "name"
     t.string "text"
+    t.text "body"
+    t.string "title", null: false
     t.integer "genre_id"
     t.string "image_id"
     t.integer "customer_id"
@@ -80,13 +85,13 @@ ActiveRecord::Schema.define(version: 2021_07_18_061454) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "follower_id", null: false
-    t.integer "followed_id", null: false
+    t.integer "customer_id"
+    t.integer "follow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["followed_id"], name: "index_relationships_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+    t.index ["customer_id", "follow_id"], name: "index_relationships_on_customer_id_and_follow_id", unique: true
+    t.index ["customer_id"], name: "index_relationships_on_customer_id"
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
   end
 
 end
