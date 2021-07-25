@@ -1,7 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to :users
   attachment :image
-  belongs_to :genre
+  belongs_to :customer
   has_many :post_comments, dependent: :destroy
   validates :title, presence: true
   validates :body, presence: true, length: { maximum: 200 }
@@ -15,7 +14,7 @@ class Post < ApplicationRecord
   # プルダウン用
    enum post_area:{
      "---":0,
-      川:1,山:2,渓流:3,湖:4,海:5,町中:6,その他:7,
+      川:1,山:2,渓流:3,湖:4,海:5,街中:6,その他:7,
    }
 
 
