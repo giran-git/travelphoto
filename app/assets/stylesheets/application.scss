@@ -94,7 +94,7 @@ footer {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url(image6.jpeg);
+  background-image: image-url('image6.jpg');
   background-size: cover;
   color: #fff;
 }
@@ -104,7 +104,7 @@ footer {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url(images2.jpeg);
+  background-image: image-url('images2.jpg');
   background-size: cover;
   color: #fff;
 }
