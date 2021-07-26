@@ -37,6 +37,9 @@ class Customer < ApplicationRecord
   end
   #ここまでフォロー機能関連
 
+
+  has_many :comments #コメント機能
+
   validates :name, presence: true, length: {in:1..50}
 
   attachment :profile_image

@@ -1,18 +1,21 @@
 <div class="egawa">
   <div class='container'>
     <div class='row'>
-      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <div class="col-md-6">
         <h3 class="title">投稿詳細</h3>
-          <!--<#% @post.each do |post| %>-->
-		      <table class='table'>
-  		      <tr>
-    		      <td>
-                <%= attachment_image_tag(@post,:image, size: "180x150", format: 'jpeg',fallback: "no_image.jpg") %>
-    		      </td>
-    		    </tr>
+  		    <tr>
+    		    <td>
+              <%= attachment_image_tag(@post,:image, size: "180x150", format: 'jpeg',fallback: "no_image.jpg") %>
+    		    </td>
+    		    <td id="post_<%= @post.id %>">
+              <%= render 'public/favorites/favorite-btn' ,  post: @post %>
+            </td>
+    		  </tr>
+    		  <table class='table'>
     		    <tr>
     		      <td>
-    		        撮影者<%= link_to(@customer.name, user_path(@customer)) %>
+    		        <!--撮影者<#%= link_to(@customer.name, user_path(@customer)) %>-->
+    		        撮影者<%= @customer.name %>
     		      </td>
     		    </tr>
     		    <tr>
@@ -27,12 +30,12 @@
     		    </tr>
     		    <tr>
               <td>
-                ジャンル名 <%= @post.genre_id %><br><br>
+                ジャンル名 <%= @post.genre_i18n %><br><br>
               </td>
             </tr>
             <tr>
               <td>
-                都道府県名 <br><br>
+                都道府県名 <%= @post.location_i18n %><br><br>
               </td>
             </tr>
     		    <tr>
@@ -40,18 +43,8 @@
     		        おすすめ撮影時期 <%= @post.text %><br><br>
     		      </td>
     		    </tr>
-    		    <!--<tr>-->
-    		    <!--  <#% if post.customer == current_customer %>-->
-                <!--<td><#%= link_to '編集', edit_post_path(@post), class: "btn btn-sm btn-success edit_post_#{@post.id}" %></td>-->
-          <!--      <td><#%= link_to "削除", post_path(post), method: :delete %></td>-->
-          <!--      <td><#%= link_to '投稿削除', post_path(post), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>-->
-          <!--    <#% else %>-->
-          <!--      <td></td>-->
-          <!--      <td></td>-->
-          <!--    <#% end %>-->
-          <!--  </tr>-->
           </table>
-          <!--<#% end %>-->
+
       </div>
     </div>
   </div>

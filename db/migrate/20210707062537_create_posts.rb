@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :body
       t.string :title, null: false
       t.integer :genre_id
+      t.integer :location_id
 
       t.string :image_id
       t.integer :customer_id
