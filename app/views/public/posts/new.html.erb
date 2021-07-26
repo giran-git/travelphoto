@@ -53,16 +53,16 @@
               </br>
               <div class="row form_group">
                 <label class="control-label col-md-2">ジャンル名</label>
-                <%= form_with model: @post, method: :post do |f| %>
+                <%#= form_with model: @post, method: :post do |f| %>
                   <%= f.select :genre_id, Post.post_areas.keys, {} %>
-                <% end %>
+                <%# end %>
               </div>
               </br>
               <div class="row form_group">
                 <label class="control-label col-md-2">都道府県選択</label>
-                <%= form_with model: @location, method: :post do |f| %>
-                <%= f.select  :location_id, Location.location_areas.keys, {} %>
-                <% end %>
+                <%# form_with model: @post, method: :post do |f| %>
+                <%= f.select  :location_id, Post.location_areas.keys, {} %>
+                <%# end %>
               </div>
               </br>
               <div class="row form_group">

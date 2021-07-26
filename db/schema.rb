@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_23_120546) do
+ActiveRecord::Schema.define(version: 2021_07_26_091354) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2021_07_23_120546) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "comment_content"
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -63,14 +73,6 @@ ActiveRecord::Schema.define(version: 2021_07_23_120546) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_comments", force: :cascade do |t|
-    t.text "comment"
-    t.integer "user_id"
-    t.integer "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer "post_area", default: 0, null: false
     t.string "name"
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_07_23_120546) do
     t.text "body"
     t.string "title", null: false
     t.integer "genre_id"
+    t.integer "location_id"
     t.string "image_id"
     t.integer "customer_id"
     t.datetime "created_at", null: false
