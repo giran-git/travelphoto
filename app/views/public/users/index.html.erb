@@ -16,6 +16,7 @@
             <th>フォロワー数<%= @customer.followers.count %></th>
             <th><%= link_to @customer.followers.count, user_followers_path(@customer) %></th>
           </tr>
+          <%= render 'public/relationships/follow_button' ,  customer: @customer %>
         </table>
 
         <div class='row'>

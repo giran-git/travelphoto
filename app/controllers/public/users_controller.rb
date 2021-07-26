@@ -2,9 +2,12 @@ class Public::UsersController < ApplicationController
   # before_action :set_user, only: [:show]
 
 def show
-   @user = Customer.find(params[:id])
-   @posts = @user.posts
-   @post = Post.new
+  @user = Customer.find(params[:id])
+  @customer = current_customer
+  @posts = @user.posts
+  @post = Post.new
+  # @relationship = current_customer.relationships.find_by(follow_id: @customer.id)
+  # @set_relationship = current_customer.relationships.new
 end
 
 def index

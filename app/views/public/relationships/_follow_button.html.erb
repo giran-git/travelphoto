@@ -1,0 +1,14 @@
+<% unless current_customer == customer %>
+  <% if current_customer.following?(customer) %>
+    <%= form_with model: @relationship, url: relationship_path, method: :delete, local: true do |f| %>
+      <%= f.hidden_field :follow_id, value: customer.id %>
+      <%= f.submit "フォローを解除する" %>
+    <% end %>
+  <% else %>
+    <!--<#%= form_for(current_customer.relationships.build) do |f| %>-->
+    <%= form_with model: @set_relationship, url: relationships_path, local: true do |f| %>
+      <%= f.hidden_field :follow_id, value: customer.id %>
+      <%= f.submit "フォロー" %>
+    <% end %>
+  <% end %>
+<% end %>

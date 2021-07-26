@@ -1,41 +1,31 @@
 class Public::RelationshipsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :set_user
 
-  # def create
-  #   following = current_customer.follow(@user)
-  #   if following.save
-  #     flash[:success] = 'ユーザーをフォローしました'
-  #     redirect_to @customer
-  #   else
-  #     flash.now[:alert] = 'ユーザーのフォローに失敗しました'
-  #     redirect_to @customer
-  #   end
-  # end
+  def create
+    following = current_user.follow(@user)
+    if following.save
+      flash[:success] = 'ユーザーをフォローしました'
+      redirect_to @user
+    else
+      flash.now[:alert] = 'ユーザーのフォローに失敗しました'
+      redirect_to @user
+    end
+  end
 
-  # def destroy
-  #   following = current_customer.unfollow(@customer)
-  #   if following.destroy
-  #     flash[:success] = 'ユーザーのフォローを解除しました'
-  #     redirect_to @customer
-  #   else
-  #     flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
-  #     redirect_to @customer
-  #   end
-  # end
+  def destroy
+    following = current_user.unfollow(@user)
+    if following.destroy
+      flash[:success] = 'ユーザーのフォローを解除しました'
+      redirect_to @user
+    else
+      flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
+      redirect_to @user
+    end
+  end
 
-  # private
-  # def
-  #   @customer = Customer.find(params[:relationship][:follow_id])
-  # end
-
-  # #————————フォロー・フォロワー一覧を表示する-————————————
-  # def followings
-  #   customer = Customer.find(params[:customer_id])
-  #   @customers = customer.followings
-  # end
-
-  # def followers
-  #   customer = Customer.find(params[:customer_id])
-  #   @customers = customer.followers
-  # end
+  private
+  def set_user
+    @user = User.find(params[:follow_id])
+    redirect_to users_path
+  end
 end
