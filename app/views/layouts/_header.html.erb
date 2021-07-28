@@ -23,6 +23,7 @@
           <li><%= link_to ' About',home_about_path,class: 'fas fa-link nav-link text-light' %></li>
           <li><%= link_to '新規登録', new_customer_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to 'ログイン', new_customer_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
+        　<li><%= link_to 'ゲストログイン', customers_guest_sign_in_path, method: :post, class: 'fas fa-user nav-link text-light' %></li>
         <% end %>
         </ul>
       </div>
