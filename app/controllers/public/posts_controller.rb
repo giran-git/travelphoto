@@ -14,7 +14,10 @@ before_action :authenticate_customer!
   def show
     @post = Post.find(params[:id])
     @customer = Customer.find(@post.customer_id)
-    #byebug
+    #コメント機能
+    @comments = @post.comments
+    @comment = current_customer.comments.new
+
   end
 
   def create
@@ -22,7 +25,6 @@ before_action :authenticate_customer!
    @post.customer_id = current_customer.id
    @post.genre_id = Post.post_areas[params[:post][:genre_id]]
    @post.location_id = Post.location_areas[params[:post][:location_id]]
-   #byebug
     if @post.save!
       redirect_to users_path, notice: "投稿完了しました"
     else
@@ -38,6 +40,6 @@ before_action :authenticate_customer!
 
   private
  def post_params
-  params.require(:post).permit(:title, :body, :image, :name, :post_area, :text, :genre_id, :location_id)
+  params.require(:post).permit(:post_content, :title, :body, :image, :name, :post_area, :text, :genre_id, :location_id)
  end
 end

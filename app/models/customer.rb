@@ -38,7 +38,7 @@ class Customer < ApplicationRecord
   #ここまでフォロー機能関連
 
 
-  has_many :comments #コメント機能
+  has_many :comments, dependent: :destroy #コメント機能
 
   validates :name, presence: true, length: {in:1..50}
 

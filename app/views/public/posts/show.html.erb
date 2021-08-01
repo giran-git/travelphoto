@@ -14,7 +14,6 @@
     		  <table class='table'>
     		    <tr>
     		      <td>
-    		        <!--撮影者<#%= link_to(@customer.name, user_path(@customer)) %>-->
     		        撮影者<%= @customer.name %>
     		      </td>
     		    </tr>
@@ -45,6 +44,17 @@
     		    </tr>
           </table>
 
+      </div>
+      <!--コメント機能-->
+      <div class="col-md-6">
+        <table class="comments">
+          <%= render 'public/comments/comment-form' ,  post: @post %>
+        </table>
+          <h2>コメントフォーム</h2>
+            <%= form_with(model:[@post, @comment], method: :post) do |f| %>
+              <%= f.text_area :comment_text, size:"50x5" %>
+                <%= f.submit 'コメントする' %>
+            <% end %>
       </div>
     </div>
   </div>
