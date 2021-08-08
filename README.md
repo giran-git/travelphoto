@@ -17,8 +17,6 @@
 
 ### 主な利用シーン
 - 旅行先を決める際の目安になればいいなと思ってます.
-## 設計書
-<...>
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1dkW1i2SpD9TQwRdPfNL1laDiQXjz-P_QAQnJVjKlLzU/edit#gid=0
