@@ -1,4 +1,9 @@
 <div id="box">
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name %>">
+        <%= msg %>
+      </div>
+    <% end %>
   <div id="images">
     <div class="image1"></div>
     <div class="image3"></div>
