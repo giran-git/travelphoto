@@ -7,9 +7,17 @@
     		    <td>
               <%= attachment_image_tag(@post,:image, size: "180x150", format: 'jpeg',fallback: "no_image.jpg") %>
     		    </td>
-    		    <td id="post_<%= @post.id %>">
-              <%= render 'public/favorites/favorite-btn' ,  post: @post %>
-            </td>
+    		    <div id="post_<%= @post.id %>">
+                <%= render 'public/favorites/favorite-btn' ,  post: @post %>
+            </div>
+            <!--投稿したユーザーのみ編集と投稿削除できるように-->
+            <% if @post.customer == current_customer %>
+              <td><%= link_to "投稿編集", edit_post_path(@post) %></td>
+            　<td><%= link_to "投稿削除", post_path(@post), method: :delete %></td>
+            <% else %>
+              <td></td>
+              <td></td>
+            <% end %>
     		  </tr>
     		  <table class='table'>
     		    <tr>

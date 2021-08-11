@@ -2,14 +2,10 @@
   <div class='container'>
       <h3>新規登録</h3>
           <% if @post.errors.any? %>
-          <div id="error_explanation">
-              <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-                <ul>
-                  <% @post.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
-            </div>
+          <%= @post.errors.count %>件のエラーが発生しました
+              <% @post.errors.full_messages.each do |message| %>
+              <%= message %>
+              <% end %>
           <% end %>
         <%= form_with model:@post do |f| %>
       　   <div class="row">

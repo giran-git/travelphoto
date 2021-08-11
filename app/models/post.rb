@@ -2,8 +2,9 @@ class Post < ApplicationRecord
   attachment :image
   belongs_to :customer
   has_many :comments, dependent: :destroy
-  validates :title, presence: true
+  validates :title,  presence: true
   validates :body, presence: true, length: { maximum: 200 }
+  validates :text,  presence: true
 
   has_many :favorites, dependent: :destroy
   has_many :favorite_customers, through: :favorites, source: :customer

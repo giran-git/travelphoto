@@ -27,24 +27,23 @@ before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
    @post.customer_id = current_customer.id
    @post.genre_id = Post.post_areas[params[:post][:genre_id]]
    @post.location_id = Post.location_areas[params[:post][:location_id]]
-    if @post.save!
-      redirect_to users_path, notice: "投稿完了しました"
+    if @post.save
+      redirect_to posts_path(@post), notice: "投稿しました"
     else
-      flash.now[:alert] = '投稿内容を入力してください。'
-      render :index
+      render :new
     end
   end
 
   def update
       if @post.update(post_params)
-        redirect_to request.referer
+        redirect_to posts_path(@post), notice: "投稿しました"
       else
         render :edit
       end
   end
   def destroy
       @post.destroy
-      redirect_to request.referer
+      redirect_to posts_path
   end
 
 private

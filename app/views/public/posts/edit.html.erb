@@ -1,7 +1,68 @@
-<!--<div class="egawa">-->
-<!--  <div class="container">-->
-<!--      <3>投稿編集</3>-->
-<!--      <span>現在ログイン中のユーザー：<#%= current_customer.name %></span>-->
-        
-<!--  </div>-->
-<!--</div>-->
+<div class="egawa">
+  <div class='container'>
+      <h3>投稿編集</h3>
+        <%= form_with model:@post do |f| %>
+      　   <div class="row">
+      　     <div class="col-md-6">
+      　       <div class="form_group">
+      　         <!--プレビュー用コード-->
+                  <img id="preview" style="width:40%;">
+                    <script>
+                      $('#post_image').on('change', function (e) {
+                        var reader = new FileReader();
+                          reader.onload = function (e) {
+                            $("#preview").attr('src', e.target.result);
+                          }
+                          reader.readAsDataURL(e.target.files[0]);
+                      });
+                    </script>
+      　               <tr>
+                        <td>
+                          <%= f.attachment_field :image %>
+                        </td>
+                      </tr>
+              </div>
+            </div>
+          </div>
+          </br>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+              <div class="row form_group">
+                <label class="control-label col-md-2">撮影場所</label>
+                <div class="col-md-5">
+                  <%= f.text_field :title, :class => "form-control edit-form" %>
+                </div>
+              </div>
+              </br>
+              <div class="row form_group">
+                <label class="control-label col-md-2">撮影地説明</label>
+                <div class="col-md-5">
+                  <%= f.text_area :body, :class => "form-control edit-form" %>
+                </div>
+              </div>
+              </br>
+              <div class="row form_group">
+                <label class="control-label col-md-2">ジャンル名</label>
+                  <%= f.select :genre_id,  Post.post_areas.keys, {} %>
+              </div>
+              </br>
+              <div class="row form_group">
+                <label class="control-label col-md-2">都道府県選択</label>
+                <%= f.select  :location_id, Post.location_areas.keys, {} %>
+              </div>
+              </br>
+              <div class="row form_group">
+                <label class="control-label col-md-3">おすすめの撮影時期</label>
+                <div class="col-md-4">
+                  <%= f.text_field :text, :class => "form-control edit-form" %>
+                </div>
+              </div>
+              </br>
+              <div class="form-group">
+                 <p><%= f.submit '更新する' %></p>
+              </div>
+            </div>
+      　   </div>
+      　<% end %>
+  </div>
+</div>
