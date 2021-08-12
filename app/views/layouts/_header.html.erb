@@ -12,11 +12,6 @@
           <li><%= link_to ' マイページ',users_path,class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' 思い出の記録',posts_path,class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' ログアウト', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
-          <% elsif admin_signed_in? %>
-            <li><%=link_to'ユーザー一覧', admin_root_path,class: 'nav-link' %></li>
-            <li><%=link_to'思い出の記録', admin_genres_path, class:'nav-link' %></li>
-            <li><%=link_to'ジャンル一覧', admin_genres_path,class: 'nav-link' %></li>
-            <li><%=link_to'ログアウト',  destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
         <% else %>
           <li><%= link_to ' Top',root_path,class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' About',home_about_path,class: 'fas fa-link nav-link text-light' %></li>
