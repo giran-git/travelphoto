@@ -36,14 +36,14 @@ before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def update
       if @post.update(post_params)
-        redirect_to posts_path(@post), notice: "投稿しました"
+        redirect_to posts_path(@post), notice: "投稿更新しました"
       else
         render :edit
       end
   end
   def destroy
       @post.destroy
-      redirect_to posts_path
+      redirect_to posts_path(@post), notice: "投稿削除しました"
   end
 
 private
