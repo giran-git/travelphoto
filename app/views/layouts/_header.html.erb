@@ -12,7 +12,7 @@
           <li><%= link_to ' マイページ',users_path,class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' 思い出の記録',posts_path,class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' ログアウト', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %>
-            <a><%= current_customer.name %>さんがログイン</a>
+            <a><%= current_customer.name %>さんがログイン中</a>
           </li>
         <% else %>
           <li><%= link_to ' Top',root_path,class: 'fas fa-home nav-link text-light' %></li>
