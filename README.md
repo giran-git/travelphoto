@@ -20,6 +20,14 @@
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1dkW1i2SpD9TQwRdPfNL1laDiQXjz-P_QAQnJVjKlLzU/edit#gid=0
 
+## ER図
+https://drive.google.com/file/d/1w2tIENOaiEh4q1_lnRQ-1gQtDniAa98F/view?usp=sharing
+
+## AWS構成図
+https://drive.google.com/file/d/17DAxMzJD1M9XBlJp2ovySzJabeRoUvC4/view?usp=sharing
+
+## AWSインフラ設計書
+https://docs.google.com/spreadsheets/d/1L5TVa12EEVE5JTow63S7go5jQc8rpwYHYefN_z65RTA/edit?usp=sharing
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
