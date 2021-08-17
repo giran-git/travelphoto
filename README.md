@@ -3,7 +3,7 @@
 - 写真投稿時のレビューやコメントで情報を共有できるようにしました。
 - また、今の情勢だと外に出かけて景色を見ることが難しくなっていると思います。なので、このサイトを使って多くの人の思い出を共有できるようにしました。
 - ゲストユーザーを実装してあるので新規登録せずにサイトを利用することができます。
-
+- ユーザーネーム:サンプル太郎　メールアドレス:test@test  パスワード:customer
 ### サイトテーマ
 - 多くの人が写真やいいね、コメントなどを投稿し思い出を共有し合うことのできるサイト。
 
@@ -31,6 +31,6 @@ https://docs.google.com/spreadsheets/d/1L5TVa12EEVE5JTow63S7go5jQc8rpwYHYefN_z65
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
+- フレームワーク：Ruby on Rails,bootstrap
 - JSライブラリ：jQuery
 - IDE：Cloud9
