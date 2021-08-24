@@ -13,7 +13,7 @@
             <!--投稿したユーザーのみ編集と投稿削除できるように-->
             <% if @post.customer == current_customer %>
               <td><%= link_to "投稿編集", edit_post_path(@post) %></td>
-            　<td><%= link_to "投稿削除", post_path(@post), method: :delete %></td>
+            　<td><%= link_to "投稿削除", post_path(@post), method: :delete,data: { confirm: "削除してもいいですか？" } %></td>
             <% else %>
               <td></td>
               <td></td>
