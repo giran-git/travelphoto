@@ -16,6 +16,7 @@
 
 //= require rails-ujs
 //= require activestorage
+//require('./preview')
 //= require turbolinks
 //= require_tree .
 

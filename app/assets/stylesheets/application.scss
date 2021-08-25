@@ -125,3 +125,9 @@ footer {
   color: #white;
   text-align: center;
 }
+
+//画像プレビュー
+.new-img{
+  width: 300px;
+  object-fit: cover;
+}
