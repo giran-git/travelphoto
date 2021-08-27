@@ -5,9 +5,6 @@
         </td>
         <td><%= comment.comment %></td>
         <!--コメントを投稿したユーザーしか消せないように-->
-         <!-- <#% if @comment.customer == current_customer.id%>-->
-      	  <!--   <td><#%= link_to 'コメント削除', post_comment_path(comment.post_id, comment.id),class: 'btn-sm btn-danger', method: :delete %></td>-->
-    	    <!--<#% end %>-->
     	 <% if customer_signed_in? && comment.customer_id == current_customer.id %>
           <td><%= link_to 'コメント削除', [comment.post, comment], method: :delete,class: 'btn-sm btn-danger' ,data: { confirm: "削除してもいいですか？" } %></td>
         <% end %>
